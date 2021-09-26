@@ -49,7 +49,7 @@
 <div class="middle" >
 
     {if serverloopstatus}
-    <h1 style="color:white;text-align: center;">Alle Servers</h1>
+    <h1 style="color:white;text-align: center;">All Servers</h1>
     <table id="Table" class="table table-striped table-dark" style="color:white;" data-toggle="table" data-pagination="true"
            data-search="true">
         <thead>
@@ -79,9 +79,9 @@
     </table>
     {endif serverloopstatus}
     {if not serverloopstatus}
-        <h1 style="color:white; text-align: center;">Es ist kein Server <br> eingetragen! <br></h1>
+        <h1 style="color:white; text-align: center;">{noserver} <br></h1>
     {endif not serverloopstatus}
-    <a class="button" href="index.php?site=server-add" style="font-size: 20px;">Neuen Server eintragen</a>
+    <a class="button" href="index.php?site=server-add" style="font-size: 20px;">{newserver}</a>
 </div>
 
 

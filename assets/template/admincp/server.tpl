@@ -2,7 +2,7 @@
 <head lang="{htmllang}">
 
     <meta charset="utf-8">
-    <title>{title} | Server Controll Panel</title>
+    <title>{title} | Server Control Panel</title>
     <link rel="stylesheet" href="assets/css/admincp/style.css">
     <link rel="stylesheet" href="assets/css/circle.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
@@ -124,6 +124,10 @@
                     <div class="counting-sec">
                         <div class="inner-width">
                             <div class="cola" >
+                                {if down}
+                                <br><br><h3>{pingfail}</h3><br>
+                                {endif down}
+                                {if not down}
                                 <div class="clearfix">
                                     <div class="c100 p{ping1} big">
                                         <span style="color:black;">{ping2} ms</span>
@@ -132,7 +136,9 @@
                                             <div class="fill"></div>
                                         </div>
                                     </div>
-                                </div><br><br><br>
+                                </div>
+                                {endif not down}
+                                <br><br><br>
                             </div>
                         </div>
                     </div>

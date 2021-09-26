@@ -188,7 +188,7 @@ class Serverstatus
         $errstr = "Server is down";
         $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
         if (!$fP) {
-            return "down";
+            return -1;
         }
         $tA = microtime(true);
         return round((($tA - $tB) * 1000), 0);

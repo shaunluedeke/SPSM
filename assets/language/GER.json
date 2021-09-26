@@ -17,6 +17,11 @@
     "Users": {
       "language": "Sprache",
       "open": "Öffnen"
+    },
+    "Server": {
+      "pingfail": "Der Server<br>ist Offline<br><br>{host}:{port}<br>ist nicht erreichbar!",
+      "newserver": "Neuen Server eintragen",
+      "noserver": "Es ist kein Server <br> eingetragen!"
     }
   }
 }

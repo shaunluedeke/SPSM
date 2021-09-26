@@ -59,7 +59,7 @@ if(!empty($_POST)){
 }
 }
 
-if(file_exists('../assets/api/mysql/mysql_connetion.php')){
+if(file_exists('../assets/api/config/db_config.php')){
  $page=2;
 }
 if(file_exists('../assets/php/configs.php')){

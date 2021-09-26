@@ -154,11 +154,13 @@ else if($_SESSION['rang']==="Admin"){
 
                 $template->parse("server-add.tpl");
                 break;
+
             case "servers":
                 $template->assign("htmllang",$language["html"]);
                 $template->assign("title",configs::$title);
                 $template->assign("open",$language["Admin"]["Users"]["open"]);
-
+                $template->assign("newserver",$language["Admin"]["Server"]["newserver"]);
+                $template->assign("noserver",$language["Admin"]["Server"]["noserver"]);
                 require("assets/api/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
                 if($mysql->count("SELECT * FROM `servers` ")<1){
@@ -205,8 +207,16 @@ else if($_SESSION['rang']==="Admin"){
                     $template->assign("speicher2",Serverstatus::free_disk_space(false));
                 }else{
                     $template->assign("local", false);
-                    $template->assign("ping2", Serverstatus::ping($host,$port,1));
-                    $template->assign("ping1", sprintf('%1.0f',Serverstatus::ping($host,$port,1)/10));
+                    $i = Serverstatus::ping($host,$port,1);
+                    if($i>-1){
+                        $template->assign("down",false);
+                        $template->assign("ping2", $i);
+                        $template->assign("ping1", sprintf('%1.0f',$i/10));
+                    }else{
+                        $template->assign("down",true);
+                        $template->assign("pingfail",$language["Admin"]["Server"]["pingfail"]);
+                    }
+
                     $template->assign("host", $host);
                     $template->assign("port", $port);
                 }
