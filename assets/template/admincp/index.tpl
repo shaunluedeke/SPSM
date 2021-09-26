@@ -47,7 +47,7 @@
 <div class="middle">
     <center>
         <h1>Admin Interface</h1>
-        <h2>Willkommen {Name}</h2>
+        <h2>{welcome} {Name}</h2>
     </center>
     <div class="box">
         <div class="pricing-table">
@@ -65,10 +65,9 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Alle User</li>
-                        <li>anzeigen</li>
+                        <li>{allusers}</li>
                     </ul> <br>
-                    <a href="index.php?site=users">Jetzt sehen!</a>
+                    <a href="index.php?site=users">{shownow}</a>
                 </div>
 
             </div>
@@ -86,10 +85,9 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Alle Server</li>
-                        <li>anzeigen</li>
+                        <li>{allservers}</li>
                     </ul> <br>
-                    <a href="index.php?site=servers">Jetzt sehen!</a>
+                    <a href="index.php?site=servers">{shownow}</a>
                 </div>
 
             </div>

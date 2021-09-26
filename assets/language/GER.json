@@ -6,5 +6,17 @@
   },
   "register":{
     "username":"Username"
+  },
+  "Admin": {
+    "Index": {
+      "welcome": "Willkommen",
+      "allusers": "Alle User <br> anzeigen",
+      "allservers": "Alle Server <br> anzeigen",
+      "shownow": "Jetzt sehen!"
+    },
+    "Users": {
+      "language": "Sprache",
+      "open": "Öffnen"
+    }
   }
 }

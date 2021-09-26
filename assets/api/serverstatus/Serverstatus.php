@@ -2,14 +2,18 @@
 class Serverstatus
 {
 
-    public static function free_disk_space()
+    public static function free_disk_space($pro=false)
     {
         $bytes = disk_free_space(".");
         $si_prefix = array('B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB');
         $base = 1024;
         $class = min((int)log($bytes, $base), count($si_prefix) - 1);
 
-        return sprintf('%1.2f', $bytes / pow($base, $class)) . ' ' . $si_prefix[$class] ;
+        if($pro){
+            return sprintf('%1.0f', (100 - ($bytes * 100 / disk_total_space("."))));
+        }else {
+            return sprintf('%1.1f', $bytes / pow($base, $class)) . ' ' . $si_prefix[$class];
+        }
     }
 
     public static function cpu_work_load()
@@ -154,7 +158,7 @@ class Serverstatus
             return null;
         } else {
             if ($getPercentage) {
-                return (100 - ($memoryFree * 100 / $memoryTotal));
+                return sprintf('%1.0f', (100 - ($memoryFree * 100 / $memoryTotal)));
             } else {
                 return array(
                     "total" => $memoryTotal,
@@ -187,7 +191,7 @@ class Serverstatus
             return "down";
         }
         $tA = microtime(true);
-        return round((($tA - $tB) * 1000), 0) . " ms";
+        return round((($tA - $tB) * 1000), 0);
 
     }
 }

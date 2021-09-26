@@ -41,4 +41,22 @@ class main
         }
         return false;
     }
+    public static function edit($name,$email,$language,$rang,$pw,$withpw){
+        require_once(__DIR__.'/../api/mysql/mysql_connetion.php');
+        $mysql = new mysql_connetion();
+        $usernamemd5 = base64_encode($name);
+
+        $emailmd5 = base64_encode($email);
+        $languagemd5 = base64_encode($language);
+        $na = $mysql->count("SELECT `Name` FROM `login` WHERE `Name` = '".$usernamemd5."'");
+        if($na>0){
+            if($withpw){
+                $passwordmd5 = md5(md5($pw));
+                return $mysql->query("UPDATE `login` SET `Password`='$passwordmd5',`Email`='$emailmd5',`Language`='$languagemd5',`Roll`='$rang' WHERE `Name`='$usernamemd5'");
+            }else{
+                return $mysql->query("UPDATE `login` SET `Email`='$emailmd5',`Language`='$languagemd5',`Roll`='$rang' WHERE `Name`='$usernamemd5'");
+            }
+        }
+        return false;
+    }
 }

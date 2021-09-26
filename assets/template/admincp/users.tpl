@@ -10,6 +10,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <script>
         function openSlideMenu(){
             document.getElementById('menu').style.width = '250px';
@@ -41,6 +45,36 @@
 
         <a class="logout" href="index.php?site=logout" ><i class="fas fa-sign-out-alt"></i>  Logout</a>
     </div>
+</div>
+<div class="middle" >
+    <h1 style="color:white;text-align: center;">Alle Users</h1>
+    <table id="Table" class="table table-striped table-dark" style="color:white;" data-toggle="table" data-pagination="true"
+           data-search="true">
+        <thead>
+        <tr>
+            <th scope="col" data-sortable="true" data-field="Akte">Name</th>
+            <th scope="col" data-sortable="true" data-field="name">Email</th>
+            <th scope="col" data-sortable="true" data-field="lang">{language}</th>
+            <th scope="col" data-sortable="true" data-field="date">Rang</th>
+            <th scope="col" data-field="open">{open}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {loop user_loop}
+        <tr>
+            <th scope="row">{user_loop_name}</th>
+            <td>{user_loop_email}</td>
+            <td>{user_loop_language}</td>
+            <td>{user_loop_rang}</td>
+            <td><a class="btn btn-primary" href="index.php?site=user&name={user_loop_name}">{open}</a></td>
+        </tr>
+        {endloop user_loop}
+        </tbody>
+        <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+    </table>
 </div>
 
 
