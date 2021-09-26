@@ -88,9 +88,9 @@ else if($_SESSION['rang']==="Admin"){
 
                 require("assets/api/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
-
+                require_once('assets/php/main.php');
                 if(isset($_POST["edit"])){
-                    if(main::edit($_POST['username'],$_POST['email'],$_POST['Language'],"default",$_POST['pw'],isset($_POST['pw']))){
+                    if(main::edit($_POST['username'],$_POST['email'],$_POST['Language'],$_POST['rang'],$_POST['pw'],isset($_POST['pw']))){
                         header("Location: index.php?site=users");
                     }else{
                         echo '<script>alert("there was a mistake!");</script>';
