@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800');
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100vh;
+  height: 100vh;
+    background: linear-gradient(-45deg, #515151, #757575, #656565, #464646);
+
+}
+.middle{
+	color: azure;
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 90%;
+    background-color: #808080;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.3);
+}
+.nav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	opacity: .9;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.7s;
+}
+.nav a {
+	display: block;
+	padding: 20px 30px;
+	font-size: 25px;
+	text-decoration: none;
+	color: #ccc;
+}
+.nav a:hover {
+	color: #fff;
+	transition: 0.4s;
+}
+.nav .aktiv {
+	color: #fff;
+}
+
+.nav .close {
+	position: absolute;
+	top: 0;
+	right: 22px;
+	margin-left: 50px;
+	font-size: 30px
+}
+.slide a {
+	color: #fff;
+	font-size: 36px;
+}
+.logout{
+  top: 100%;
+  bottom: 1%;
+}
+#content {
+	padding: 20px;
+	transition: margin-left 0.7s;
+	overflow: hidden;
+	width: 100%;
+}
+.pricing-table{
+  padding-top: 70px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+
+}
+
+.col{
+  flex: 25%;
+  padding: 10px;
+  max-width: 320px;
+  box-sizing: border-box;
+}
+
+.table{
+  background: rgba(100, 100, 100, 0.5);
+  padding: 40px 20px;
+  font-family: "montserrat",sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00000070;
+}
+.table h2{
+  text-transform: uppercase;
+}
+.table ul{
+  margin: 0;
+  padding: 0;
+}
+.table ul li{
+  padding: 10px 0;
+  list-style: none;
+}
+.price{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.price span{
+  display: block;
+  font-size: 14px;
+}
+.table a{
+  text-decoration: none;
+  color: #ffffffaa;
+  border: 2px solid #333333;
+  display: block;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.5s linear;
+}
+.table .button a{
+  text-decoration: none;
+  color: #ffffffaa;
+  border: 2px solid #333333;
+  display: block;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-radius: 40px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.5s linear;
+}
+.table a:hover{
+  background: #333333;
+  color: #fff;
+}
+.counting-sec{
+  padding: 20px 0;
+  width: 100%;
+
+}
+.inner-width{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+.cola{
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.cola i{
+  font-size: 40px;
+  color: #333;
+}
