@@ -267,6 +267,7 @@ else{
                 header('Location: index.php');
                 break;
             default:
+                $template->parse("404.tpl");
                 break;
     }
 }
