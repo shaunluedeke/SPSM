@@ -1,0 +1,10 @@
+{"html":"de",
+  "Login":{
+    "useremail":"Username oder Email",
+    "password":"Password",
+    "login":"Login"
+  },
+  "register":{
+    "username":"Username"
+  }
+}
