@@ -120,6 +120,40 @@ else if($_SESSION['rang']==="Admin"){
                 $template->parse("user.tpl");
                 break;
 
+            case "server-add":
+                if(isset($_POST["add"])){
+                    require("assets/api/mysql/mysql_connetion.php");
+                    $mysql = new mysql_connetion();
+
+                    $name = $_POST["name"];
+                    $host = $_POST["host"];
+                    $port = $_POST["port"];
+                    $rang = $_POST["rang"];
+
+                    if($mysql->count("SELECT * FROM `servers` WHERE `Server`='".$name."'")<1){
+
+                        if($mysql->query("INSERT INTO `servers`(`Server`, `Host`, `Port`, `Roll`) VALUES ('$name','$host','$port','$rang')")){
+                            header("Location: index.php?site=servers");
+                        }else{
+                            echo '<script>alert("there was a mistake!");</script>';
+                            header("Location: index.php?site=servers");
+                        }
+                    }else{
+                        if($mysql->query("UPDATE `servers` SET `Host`='$host',`Port`='$port',`Roll`='$rang' WHERE `Server`='$name'")){
+                            header("Location: index.php?site=servers");
+                        }else{
+                            echo '<script>alert("there was a mistake!");</script>';
+                            header("Location: index.php?site=servers");
+                        }
+                    }
+                }
+
+                $template->assign("htmllang",$language["html"]);
+                $template->assign("title",configs::$title);
+
+
+                $template->parse("server-add.tpl");
+                break;
             case "servers":
                 $template->assign("htmllang",$language["html"]);
                 $template->assign("title",configs::$title);

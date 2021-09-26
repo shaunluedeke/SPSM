@@ -132,7 +132,7 @@
                                             <div class="fill"></div>
                                         </div>
                                     </div>
-                                </div>
+                                </div><br><br><br>
                             </div>
                         </div>
                     </div>
@@ -145,9 +145,9 @@
                         <div class="inner-width">
                             <div class="cola" >
                                 <br>
-                                <h4><b>Name:</b> {name}</h4>
-                                <h4><b>Host:</b> {host}</h4>
-                                <h4><b>Port:</b> {port}</h4>
+                                <h4><b>Name:</b><br> {name}</h4>
+                                <h4><b>Host:</b><br> {host}</h4>
+                                <h4><b>Port:</b><br> {port}</h4>
                                 <br><br>
                                 <a href="index.php?site=servers"><h4>Zurück</h4></a>
                             </div>

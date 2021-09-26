@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{htmllang}">
 <head>
-    <title>{title} | Register</title>
+    <title>{title} | User</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/login/style.css">
 </head>
@@ -49,7 +49,7 @@
     </div>
 
     <input class="button" type="submit" name="edit" id="submitb" value="Ändern">
-
+    <a class="button" href="index.php?site=users">Zurück</a>
 </form>
 
 <script type="text/javascript">

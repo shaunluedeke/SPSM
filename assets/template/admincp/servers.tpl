@@ -80,8 +80,8 @@
     {endif serverloopstatus}
     {if not serverloopstatus}
         <h1 style="color:white; text-align: center;">Es ist kein Server <br> eingetragen! <br></h1>
-        <a class="button" href="index.php?site=server-add">Neuen Server eintragen</a>
     {endif not serverloopstatus}
+    <a class="button" href="index.php?site=server-add" style="font-size: 20px;">Neuen Server eintragen</a>
 </div>
 
 
