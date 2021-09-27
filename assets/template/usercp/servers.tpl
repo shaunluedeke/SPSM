@@ -40,8 +40,7 @@
             <i class="fas fa-times"></i>
         </a>
         <a href="index.php"><i class="fas fa-home"></i>  Home</a>
-        <a href="index.php?site=servers"><i class="fas fa-server"></i>  Servers</a>
-        <a href="index.php?site=users" class="aktiv"><i class="fas fa-users"></i>  Users</a>
+        <a href="index.php?site=servers" class="aktiv"><i class="fas fa-server"></i>  Servers</a>
 
         <a class="logout" href="index.php?site=logout" ><i class="fas fa-sign-out-alt"></i>  Logout</a>
     </div>
@@ -81,7 +80,6 @@
     {if not serverloopstatus}
         <h1 style="color:white; text-align: center;">{noserver} <br></h1>
     {endif not serverloopstatus}
-    <a class="button" href="index.php?site=server-add" style="font-size: 20px;">{newserver}</a>
 </div>
 
 

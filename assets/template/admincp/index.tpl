@@ -41,7 +41,7 @@
         <a href="index.php?site=servers"><i class="fas fa-server"></i> Servers</a>
         <a href="index.php?site=users"><i class="fas fa-users"></i> Users</a>
 
-        <a class="logout" href="index.php?site=logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        <a class="logout" href="index.php?site=logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
 </div>
 <div class="middle">

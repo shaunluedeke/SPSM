@@ -16,12 +16,28 @@
     },
     "Users": {
       "language": "Sprache",
+      "allusers": "Alle Benutzer",
       "open": "Öffnen"
     },
     "Server": {
+      "allserver": "Alle Server",
       "pingfail": "Der Server<br>ist Offline<br><br>{host}:{port}<br>ist nicht erreichbar!",
       "newserver": "Neuen Server eintragen",
       "noserver": "Es ist kein Server <br> eingetragen!"
+    }
+  },
+  "User": {
+    "Index": {
+      "welcome": "Willkommen",
+      "shownow": "Jetzt sehen!",
+      "noserver": "Es ist kein Server <br> eingetragen!"
+    },
+    "Server": {
+      "allserver": "Alle Server",
+      "pingfail": "Der Server<br>ist Offline<br><br>{host}:{port}<br>ist nicht erreichbar!",
+      "newserver": "Neuen Server eintragen",
+      "noserver": "Es ist kein Server <br> eingetragen!",
+      "open": "Öffnen"
     }
   }
 }

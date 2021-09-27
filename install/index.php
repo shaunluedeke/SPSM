@@ -35,7 +35,6 @@ if(!empty($_POST)){
         $configfile = fopen("../assets/php/configs.php","w");
         fwrite($configfile,"<?php \n class configs \n {\n");
         fwrite($configfile,'    public static $title = "'.$_POST["sn"].'";'."\n");
-        fwrite($configfile,'    public static $charset = "UTF-8";'."\n");
         fwrite($configfile,'    public static $language = "'.$_POST["Language"].'";'."\n");
         fwrite($configfile,"\n} \n ?>");
         fclose($configfile);

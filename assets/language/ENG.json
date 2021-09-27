@@ -1,0 +1,45 @@
+{"html":"de",
+  "Login":{
+    "useremail":"Username or email",
+    "password":"Password",
+    "login":"Login"
+  },
+  "register":{
+    "username":"Username"
+  },
+  "Admin": {
+    "Index": {
+      "welcome": "Welcome",
+      "allusers": "Show all <br> Users",
+      "allservers": "Show all <br> Servers",
+      "shownow": "See now!"
+    },
+    "Users": {
+      "language": "Language",
+      "allusers": "All Users",
+      "open": "Open"
+    },
+    "Server": {
+      "allserver": "All servers",
+      "pingfail": "The server <br> is offline <br> <br> {host}:{port} <br> cannot be reached!",
+      "newserver": "Enter new server",
+      "noserver": "No server is entered!"
+    }
+  },
+  "User": {
+    "Index": {
+      "welcome": "Welcome",
+      "shownow": "See now!",
+      "infotext": "There are {allservers} <br> and {onlineservers} are online",
+      "noserver": "No server is entered!"
+    },
+    "Server": {
+      "allserver": "All servers",
+      "pingfail": "The server <br> is offline <br> <br> {host}:{port} <br> cannot be reached!",
+      "newserver": "Enter new server",
+      "noserver": "No server is entered!",
+      "infotext": "Es sind {allservers} <br> und {onlineservers} sind Online",
+      "open": "Open"
+    }
+  }
+}

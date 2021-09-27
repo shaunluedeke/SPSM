@@ -64,6 +64,8 @@ else if($_SESSION['rang']==="Admin"){
             case "users":
                 $template->assign("htmllang",$language["html"]);
                 $template->assign("title",configs::$title);
+
+                $template->assign("allusers",$language["Admin"]["Users"]["allusers"]);
                 $template->assign("language",$language["Admin"]["Users"]["language"]);
                 $template->assign("open",$language["Admin"]["Users"]["open"]);
 
@@ -159,6 +161,8 @@ else if($_SESSION['rang']==="Admin"){
                 $template->assign("htmllang",$language["html"]);
                 $template->assign("title",configs::$title);
                 $template->assign("open",$language["Admin"]["Users"]["open"]);
+
+                $template->assign("allserver",$language["Admin"]["Server"]["allserver"]);
                 $template->assign("newserver",$language["Admin"]["Server"]["newserver"]);
                 $template->assign("noserver",$language["Admin"]["Server"]["noserver"]);
                 require("assets/api/mysql/mysql_connetion.php");
@@ -240,7 +244,7 @@ else if($_SESSION['rang']==="Admin"){
                 header('Location: index.php');
                 break;
 
-                default:
+            default:
                 $template->assign("Name",$_SESSION['name']);
                 $template->assign("htmllang",$language["html"]);
                 $template->assign("title",configs::$title);
@@ -276,8 +280,142 @@ else{
                 session_destroy();
                 header('Location: index.php');
                 break;
+
+            case "servers":
+            $template->assign("htmllang",$language["html"]);
+            $template->assign("title",configs::$title);
+            $template->assign("open",$language["User"]["Server"]["open"]);
+
+            $template->assign("allserver",$language["User"]["Server"]["allserver"]);
+            $template->assign("newserver",$language["User"]["Server"]["newserver"]);
+            $template->assign("noserver",$language["User"]["Server"]["noserver"]);
+            require("assets/api/mysql/mysql_connetion.php");
+            $mysql = new mysql_connetion();
+            if($mysql->count("SELECT * FROM `servers` ")<1){
+                $template->assign("serverloopstatus",false);
+            }else {
+                $template->assign("serverloopstatus",true);
+                $db_res = $mysql->result("SELECT * FROM `servers` ");
+
+                while ($row = mysqli_fetch_array($db_res)) {
+                    $server_loop = array();
+                    $server_loop["name"] = ($row["Server"]);
+                    $server_loop["host"] = ($row["Host"]);
+                    $server_loop["port"] = ($row["Port"]);
+                    $server_loop["rang"] = $row["Roll"];
+                    $template->assign("server_loop", $server_loop);
+                }
+            }
+            $template->parse("servers.tpl");
+            break;
+
+            case "server":
+            $name = $_GET["name"] ?? "";
+
+            require("assets/api/mysql/mysql_connetion.php");
+            $mysql = new mysql_connetion();
+            $db_res = $mysql->result("SELECT * FROM `servers` WHERE `Server`='".$name."'");
+
+            $host = "";
+            $port = 0;
+            $rang = "";
+
+            while ($row = mysqli_fetch_array($db_res)) {
+                $host = $row['Host'];
+                $port = (int)$row['Port'];
+                $rang = $row['Roll'];
+            }
+            require("assets/api/serverstatus/Serverstatus.php");
+            if($host=="localhost"||$host=="127.0.0.1"){
+
+                $template->assign("local", true);
+                $template->assign("cpuload",Serverstatus::getServerLoad());
+                $template->assign("memory",Serverstatus::getServerMemoryUsage(true));
+                $template->assign("speicher1",Serverstatus::free_disk_space(true));
+                $template->assign("speicher2",Serverstatus::free_disk_space(false));
+            }else{
+                $template->assign("local", false);
+                $i = Serverstatus::ping($host,$port,1);
+                if($i>-1){
+                    $template->assign("down",false);
+                    $template->assign("ping2", $i);
+                    $template->assign("ping1", sprintf('%1.0f',$i/10));
+                }else{
+                    $template->assign("down",true);
+                    $template->assign("pingfail",$language["User"]["Server"]["pingfail"]);
+                }
+
+                $template->assign("host", $host);
+                $template->assign("port", $port);
+            }
+
+            $template->assign("name",$name);
+            $template->assign("htmllang",$language["html"]);
+            $template->assign("title",configs::$title);
+
+
+            $template->parse("server.tpl");
+
+            break;
+
             default:
-                $template->parse("404.tpl");
+                require("assets/api/serverstatus/Serverstatus.php");
+
+                $template->assign("Name",$_SESSION['name']);
+                $template->assign("htmllang",$language["html"]);
+                $template->assign("title",configs::$title);
+
+                $servernext = ($_GET["server"]) ?? 0;
+
+                $offset=0+(intval($servernext));
+                $limit=2+intval($servernext);
+
+                $template->assign("last",$offset>0);
+                $template->assign("lastserver",$offset-1);
+
+
+                require("assets/api/mysql/mysql_connetion.php");
+                $mysql = new mysql_connetion();
+
+                $servercount=$mysql->count( "SELECT * FROM `servers` WHERE `Roll`='default' ");
+
+                $template->assign("next",$limit<($servercount-1));
+                $template->assign("nextserver",intval($servernext)+1);
+
+                if($servercount>0) {
+                    $template->assign("server",true);
+                    $na = 0;
+                    $db_res1 = $mysql->result("SELECT * FROM `servers` WHERE `Roll`='default' ");
+                    while ($row = mysqli_fetch_array($db_res1)) {
+                        if ($na >= $offset && $na <= $limit) {
+                            $ping = array();
+                            $ping["host"] = $row["Server"];
+                            $i = Serverstatus::ping($row["Host"], (int)$row["Port"], 1);
+                            if ($i > -1) {
+                                $ping["ping1"] = sprintf('%1.0f', $i / 10);
+                                $ping["ping2"] = $i . " MS";
+                            } else {
+                                $ping["ping1"] = 100;
+                                $ping["ping2"] = "None";
+                            }
+                            $template->assign("ping_loop", $ping);
+                        }
+                        $na++;
+                    }
+                }else{
+                    $template->assign("server",false);
+                    $template->assign("noserver",$language["User"]["Index"]["noserver"]);
+                }
+
+
+
+                $template->assign("cpu",Serverstatus::getServerLoad());
+                $template->assign("ram",Serverstatus::getServerMemoryUsage(true));
+                $template->assign("speicher",Serverstatus::free_disk_space(true));
+
+                $template->assign("welcome",$language["User"]["Index"]["welcome"]);
+                $template->assign("shownow",$language["User"]["Index"]["shownow"]);
+                $template->parse("index.tpl");
                 break;
     }
 }

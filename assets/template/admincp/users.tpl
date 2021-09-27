@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class="middle" >
-    <h1 style="color:white;text-align: center;">Alle Users</h1>
+    <h1 style="color:white;text-align: center;">{allusers}</h1>
     <table id="Table" class="table table-striped table-dark" style="color:white;" data-toggle="table" data-pagination="true"
            data-search="true">
         <thead>
