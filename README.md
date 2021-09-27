@@ -20,11 +20,6 @@ Apache2
 PHP 7.0 oder neuer
 ```
 
-## Das kommt noch
-```bash
-ein UserCP
-```
-
 ## Anwendungsbereich 
 Das System funktioniert für Windows und Linux. Für iOS ist es noch nicht getestet
 
