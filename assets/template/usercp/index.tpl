@@ -87,7 +87,7 @@
             {loop ping_loop}
             <div class="col">
                 <div class="table">
-                    <h2>{ping_loop_host}</h2>
+                    <h2 style="color: white;">{ping_loop_host}</h2>
                     <div class="counting-sec">
                         <div class="inner-width">
                             <div class="cola">

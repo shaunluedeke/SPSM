@@ -387,20 +387,22 @@ else{
                     $na = 0;
                     $db_res1 = $mysql->result("SELECT * FROM `servers` WHERE `Roll`='default' ");
                     while ($row = mysqli_fetch_array($db_res1)) {
-                        if ($na >= $offset && $na <= $limit) {
-                            $ping = array();
-                            $ping["host"] = $row["Server"];
-                            $i = Serverstatus::ping($row["Host"], (int)$row["Port"], 1);
-                            if ($i > -1) {
-                                $ping["ping1"] = sprintf('%1.0f', $i / 10);
-                                $ping["ping2"] = $i . " MS";
-                            } else {
-                                $ping["ping1"] = 100;
-                                $ping["ping2"] = "None";
+                        if($row["Host"]!=="localhost") {
+                            if ($na >= $offset && $na <= $limit) {
+                                $ping = array();
+                                $ping["host"] = $row["Server"];
+                                $i = Serverstatus::ping($row["Host"], (int)$row["Port"], 1);
+                                if ($i > -1) {
+                                    $ping["ping1"] = sprintf('%1.0f', $i / 10);
+                                    $ping["ping2"] = $i . " MS";
+                                } else {
+                                    $ping["ping1"] = 100;
+                                    $ping["ping2"] = "None";
+                                }
+                                $template->assign("ping_loop", $ping);
                             }
-                            $template->assign("ping_loop", $ping);
+                            $na++;
                         }
-                        $na++;
                     }
                 }else{
                     $template->assign("server",false);
