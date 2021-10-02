@@ -30,4 +30,5 @@ Das System funktioniert für Windows und Linux. Für iOS ist es noch nicht getes
 
 ## Sonstiges
 Das System wurde mit MainTale-Studio entwickelt
+
 Server Abfrage von: Serverbauer und Oliver
