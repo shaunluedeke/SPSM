@@ -34,6 +34,9 @@ The system was developed with MainTale-Studio
 Server query from: Serverbauer und Oliver
 
 
+
+
+
 # SPSM Deutsch
 
 Ein Altes System was ich weiterentwickelt habe
