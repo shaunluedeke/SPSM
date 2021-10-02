@@ -190,6 +190,19 @@ else if($_SESSION['rang']==="Admin"){
 
                 require("assets/api/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
+
+                $action = $_GET["action"] ?? "";
+
+                if($action==="delete"){
+                    $mysql->query("DELETE FROM `servers` WHERE `Server`='".$name."'");
+
+                    if($mysql->count("SELECT * FROM `servers` WHERE `Server`='".$name."'")>0){
+                        ?><script>alert("Something wevent wrong!")</script><?php
+                    }else{
+                        header("Location: index.php?site=servers");
+                    }
+                }
+
                 $db_res = $mysql->result("SELECT * FROM `servers` WHERE `Server`='".$name."'");
 
                 $host = "";

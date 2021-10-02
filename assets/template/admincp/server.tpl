@@ -155,7 +155,7 @@
                                 <h4><b>Host:</b><br> {host}</h4>
                                 <h4><b>Port:</b><br> {port}</h4>
                                 <br><br>
-                                <a href="index.php?site=servers"><h4>Zurück</h4></a>
+                                <a href="index.php?site=server&name=Foxlabs&action=delete"><h4>Löschen</h4></a>
                             </div>
                         </div>
                     </div>

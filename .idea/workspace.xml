@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01efb0f7-fb82-42b4-b4fc-e1be0fde062d" name="Changes" comment="" />
+    <list default="true" id="01efb0f7-fb82-42b4-b4fc-e1be0fde062d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/api/twitch/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/api/twitch/auth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/admincp/server/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/admincp/server/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/admincp/users/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/admincp/users/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/install/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/install/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/login/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/template/admincp/server.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/assets/template/admincp/server.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/install/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,6 +78,9 @@
       <workItem from="1632685882659" duration="1150000" />
       <workItem from="1632744104526" duration="12412000" />
       <workItem from="1632841711040" duration="430000" />
+      <workItem from="1632853184478" duration="7000" />
+      <workItem from="1633176244775" duration="647000" />
+      <workItem from="1633176984564" duration="194000" />
     </task>
     <servers />
   </component>
