@@ -31,7 +31,7 @@ The system works for Windows and Linux. It has not yet been tested for iOS
 ## Sonstiges
 The system was developed with MainTale-Studio
 
-Server query from: [Serverbauer](https://github.com/serverbauer) und Oliver
+Server query from: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
 
 
 
@@ -70,4 +70,4 @@ Das System funktioniert für Windows und Linux. Für iOS ist es noch nicht getes
 ## Sonstiges
 Das System wurde mit MainTale-Studio entwickelt
 
-Server Abfrage von: [Serverbauer](https://github.com/serverbauer) und Oliver
+Server Abfrage von: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
