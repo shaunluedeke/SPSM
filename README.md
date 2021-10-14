@@ -1,10 +1,10 @@
 # SPSM English
 
-An old system that I have further developed
+>An old system that I have further developed
 
 ## Installation
 
-Installation is via the website
+>Installation is via the website
 
 ```bash
 http://{deine IP}/install
@@ -21,17 +21,17 @@ PHP 7.0 or newer
 ```
 
 ## Scope of Application
-The system works for Windows and Linux. It has not yet been tested for iOS
+>The system works for Windows and Linux. It has not yet been tested for iOS
 
 ## Impressum
-[Imprint](https://luedeke.xyz/impressum.html)
+>[Imprint](https://luedeke.xyz/impressum.html)
 
 
 
 ## Sonstiges
-The system was developed with MainTale-Studio
+>The system was developed with MainTale-Studio
 
-Server query from: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
+>Server query from: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
 
 
 
@@ -39,11 +39,11 @@ Server query from: [Serverbauer](https://github.com/serverbauer) und [Oliver](ht
 
 # SPSM Deutsch
 
-Ein Altes System was ich weiterentwickelt habe
+>Ein Altes System was ich weiterentwickelt habe
 
 ## Installation
 
-Installation geht über die Website
+>Installation geht über die Website
 
 ```bash
 http://{deine IP}/install
@@ -60,14 +60,14 @@ PHP 7.0 oder neuer
 ```
 
 ## Anwendungsbereich 
-Das System funktioniert für Windows und Linux. Für iOS ist es noch nicht getestet
+>Das System funktioniert für Windows und Linux. Für iOS ist es noch nicht getestet
 
 ## Impressum
-[Impressum](https://luedeke.xyz/impressum.html)
+>[Impressum](https://luedeke.xyz/impressum.html)
 
 
 
 ## Sonstiges
-Das System wurde mit MainTale-Studio entwickelt
+>Das System wurde mit MainTale-Studio entwickelt
 
-Server Abfrage von: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
+>Server Abfrage von: [Serverbauer](https://github.com/serverbauer) und [Oliver](https://github.com/Oliver-jauch)
