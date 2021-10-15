@@ -7,7 +7,7 @@
 >Installation is via the website
 
 ```bash
-http://{deine IP}/install
+http://{your IP}/install
 ```
 
 ## You need
