@@ -1,22 +1,24 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 body{
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  width: 100vh;
-  height: 100vh;
-    background: linear-gradient(-45deg, #515151, #757575, #656565, #464646);
-
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 100vh;
+    height: 100vh;
+    background: #2C2F33 !important;
 }
 
-
 .text-box{
-  width: 100%;
-  overflow: hidden;
-  font-size: 20px;
-  padding: 8px 0;
-  margin: 8px 0;
-  border-bottom: 1px solid #009999;
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    margin: 8px 0;
+    border-bottom: 1px solid #06e881;
+    border-radius:6px !important;
+
+    padding:10px 0px;
+    text-align:center;
+
 }
  .text-box i{
   width: 26px;
@@ -24,8 +26,8 @@ body{
   text-align: center;
 }
  .text-box input{
-  border: none;
-  outline: none;
+  border: none !important;
+  outline: none !important;
   background: none;
   color: white;
   font-size: 18px;
@@ -35,8 +37,13 @@ body{
   margin: 0 10px;
 }
 .text-box input::placeholder{
-  color: #d9d9d9;
-
+    background: none!important;
+    outline: none !important;
+    border-radius:6px !important;
+}
+.text-box input:focus{
+    background: none;
+    outline: none;
 }
 .text-box li{
  border: none;
@@ -58,7 +65,7 @@ body{
 .button{
   width: 100%;
   background: none;
-  border: 2px solid  #009999;
+  border: 2px solid  #06e881;
   color: white;
   padding: 5px;
   font-size: 18px;
@@ -91,38 +98,39 @@ body{
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
- .login-box{
-  width: 280px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-    background-color: #808080;
-  transform: translate(-50%,-50%);
-  color: white;
-  border-radius: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.3);
+.login-box{
+        width: 450px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: rgba(87, 87, 185, 0.58);
+        transform: translate(-50%,-50%);
+        color: #fff;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.3);
 }
  .login-box h1{
-  float: left;
-  font-size: 40px;
-  border-bottom: 6px solid #009999;
-  margin-bottom: 20px;
-  padding: 13px 0;
+      float: left;
+      font-size: 40px;
+      border-bottom: 6px solid #06e881;
+      margin-bottom: 20px;
+      padding: 13px 0;
 }
 .button a {
-  text-decoration: none;
+      text-decoration: none;
 }
 .ready{
- font-size: 100px;
- margin-bottom: 20px;
- padding: 15px 0;
+     font-size: 40px;
+     margin-bottom: 35px;
+     padding: 0;
 }
 .login-box h2{
- font-size: 20px;
- border-bottom: 2px solid #009999;
- margin-bottom: 20px;
- padding: 15px 0;
+     font-size: 20px;
+     border-bottom: 2px solid #06e881;
+     margin-bottom: 20px;
+    padding: 15px 10px;
+    float: left;
 }

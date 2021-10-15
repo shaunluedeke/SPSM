@@ -7,11 +7,13 @@
 <body>
 <section>
 </section>
+<script type="text/javascript" color="6, 232, 129" opacity="1.6" zindex="-2" count="100" src="http://www.cssscript.com/demo/interactive-particle-nest-system-with-javascript-and-canvas-canvas-nest-js/canvas-nest.js"></script><canvas id="c_n2" width="725" height="913" style="position: fixed; top: 0px; left: 0px; z-index: -2; opacity: 0.7;"></canvas>
+
 <form class="login-box" action="index.php?page=3" method="post">
 
 
 
-    <h1>Install Page: 2</h1>
+    <h1>Install Page: 2</h1><br><br><br>
     <h2>Settings</h2>
     <div class="text-box">
         <i class="fas fa-database"></i>
@@ -35,7 +37,7 @@
     </div>
     <div class="text-box">
         <i class="fas fa-lock" aria-hidden="true" onclick="showhide();" id="toggle"></i>
-        <input type="password" placeholder="Password" name="pw" value="" id="password">
+        <input type="password" placeholder="Password" name="pw" autocomplete="new-password" id="password">
     </div>
 
     <input class="button" type="submit" name="contains" value="Finish" >

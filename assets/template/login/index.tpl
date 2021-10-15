@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="assets/css/login/style.css">
 </head>
 <body>
+<script type="text/javascript" color="6, 232, 129" opacity="1.6" zindex="-2" count="100" src="http://www.cssscript.com/demo/interactive-particle-nest-system-with-javascript-and-canvas-canvas-nest-js/canvas-nest.js"></script><canvas id="c_n2" width="725" height="913" style="position: fixed; top: 0px; left: 0px; z-index: -2; opacity: 0.7;"></canvas>
+
 <section>
 </section>
-<form class="login-box" action="index.php" method="post">
+<form class="login-box" action="index.php" autocomplete="new-password" method="post">
 
     <h1>Login</h1>
     <div class="text-box">
@@ -17,7 +19,7 @@
 
     <div class="text-box">
         <i class="fas fa-lock" aria-hidden="true" onclick="showhide();" id="toggle"></i>
-        <input type="password" placeholder="{password}" required name="pw" value="" id="password">
+        <input type="password" placeholder="{password}" required name="pw" autocomplete="off" id="password">
     </div>
 
     <input class="button" type="submit" name="login" value="{login}" >

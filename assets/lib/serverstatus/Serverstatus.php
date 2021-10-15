@@ -183,21 +183,15 @@ class Serverstatus
 
     public static function ping($host, $port, $timeout)
     {
-
-        try {
-            $tB = microtime(true);
-            $errno = 1;
-            $errstr = "Server is down";
-            $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
-            if (!$fP) {
-                return -1;
-            }
-            $tA = microtime(true);
-            fclose($fP);
-            return round((($tA - $tB) * 1000), 0);
-        }catch(Exception $e){
+        $tB = microtime(true);
+        $errno = 1;
+        $errstr = "Server is down";
+        $fP = fSockOpen($host, $port, $errno, $errstr, $timeout);
+        if (!$fP) {
             return -1;
         }
+        $tA = microtime(true);
+        return round((($tA - $tB) * 1000), 0);
 
     }
 }

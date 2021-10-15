@@ -1,6 +1,6 @@
 <?php
 if(file_exists('../assets/php/configs.php')){
-    header('Location: ../index.php');
+    //header('Location: ../index.php');
 }
 $page = 1;
 
@@ -17,10 +17,10 @@ if(!empty($_POST)){
         $mysqluser = $_POST["user"];
         $mysqlpw = $_POST["pw"];
         $mysqldb = $_POST["db"];
-        if(file_exists('../assets/api/config/db_config.php')){
-            unlink('../assets/api/config/db_config.php');
+        if(file_exists('../assets/lib/config/db_config.php')){
+            unlink('../assets/lib/config/db_config.php');
         }
-        $myfile = fopen("../assets/api/config/db_config.php","w");
+        $myfile = fopen("../assets/lib/config/db_config.php","w");
         fwrite($myfile,"<?php \n\n class db_config \n { \n\n\n");
         fwrite($myfile,'  public static $mysqlhost = "'.$mysqlhost.'"'.";\n");
         fwrite($myfile,'  public static $mysqlport = "'.$mysqlport.'"'.";\n");
@@ -29,6 +29,10 @@ if(!empty($_POST)){
         fwrite($myfile,'  public static $mysqldatabase = "'.$mysqldb.'"'.";\n }");
         fwrite($myfile,"\n\n?>");
         fclose($myfile);
+
+        $link= mysqli_connect($mysqlhost, $mysqluser, $mysqlpw);
+        mysqli_query($link,'CREATE DATABASE IF NOT EXISTS `'.$mysqldb.'`');
+        mysqli_close($link);
     }
     if($page===3){
         if(isset($_POST["sn"],$_POST["Language"])){
@@ -40,7 +44,7 @@ if(!empty($_POST)){
             fclose($configfile);
         }
         if(isset($_POST["user"], $_POST["email"] , $_POST["pw"])){
-            require('../assets/api/mysql/mysql_connetion.php');
+            require_once('../assets/lib/mysql/mysql_connetion.php');
             $mysql = new mysql_connetion();
             $mysql->query('CREATE TABLE IF NOT EXISTS `Login` ( `Name` VARCHAR(100) NOT NULL , `Password` VARCHAR(100) NOT NULL , `Email` VARCHAR(100) NOT NULL , `Language` VARCHAR(100) NOT NULL , `Roll` VARCHAR(100) NOT NULL )');
             $mysql->query('CREATE TABLE IF NOT EXISTS `Servers` ( `Server` VARCHAR(100) NOT NULL , `Host` VARCHAR(100) NOT NULL , `Port` VARCHAR(100) NOT NULL ,  `Roll` VARCHAR(100) NOT NULL)');
@@ -58,13 +62,13 @@ if(!empty($_POST)){
     }
 }
 
-if(file_exists('../assets/api/config/db_config.php')){
-    $page=2;
+if(file_exists('../assets/lib/config/db_config.php')){
+    //$page=2;
 }
 if(file_exists('../assets/php/configs.php')){
-    $page=3;
+   // $page=3;
 }
-require("../assets/api/template/template.php");
+require("../assets/lib/template/template.php");
 
 $template = new template();
 $template->setTempFolder("../assets/template/install/");

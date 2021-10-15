@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="../assets/css/install/style.css">
 </head>
 <body>
+<script type="text/javascript" color="6, 232, 129" opacity="1.6" zindex="-2" count="100" src="http://www.cssscript.com/demo/interactive-particle-nest-system-with-javascript-and-canvas-canvas-nest-js/canvas-nest.js"></script><canvas id="c_n2" width="725" height="913" style="position: fixed; top: 0px; left: 0px; z-index: -2; opacity: 0.7;"></canvas>
+
 <div class="login-box">
 
 

@@ -4,7 +4,7 @@ if(!file_exists("assets/php/configs.php")){
     die("<h1>Die Installation ist nicht fertig</h1>");
 }
 require("assets/php/configs.php");
-require("assets/api/template/template.php");
+require("assets/lib/template/template.php");
 $template = new template();
 
 require("assets/php/languagemanager.php");
@@ -69,7 +69,7 @@ else if($_SESSION['rang']==="Admin"){
                 $template->assign("language",$language["Admin"]["Users"]["language"]);
                 $template->assign("open",$language["Admin"]["Users"]["open"]);
 
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
                 $db_res = $mysql->result( "SELECT * FROM `login` ");
 
@@ -88,7 +88,7 @@ else if($_SESSION['rang']==="Admin"){
             case "user":
                 $name = $_GET["name"] ?? "";
 
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
                 require_once('assets/php/main.php');
                 if(isset($_POST["edit"])){
@@ -124,7 +124,7 @@ else if($_SESSION['rang']==="Admin"){
 
             case "server-add":
                 if(isset($_POST["add"])){
-                    require("assets/api/mysql/mysql_connetion.php");
+                    require("assets/lib/mysql/mysql_connetion.php");
                     $mysql = new mysql_connetion();
 
                     $name = $_POST["name"];
@@ -165,7 +165,7 @@ else if($_SESSION['rang']==="Admin"){
                 $template->assign("allserver",$language["Admin"]["Server"]["allserver"]);
                 $template->assign("newserver",$language["Admin"]["Server"]["newserver"]);
                 $template->assign("noserver",$language["Admin"]["Server"]["noserver"]);
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
                 if($mysql->count("SELECT * FROM `servers` ")<1){
                     $template->assign("serverloopstatus",false);
@@ -188,7 +188,7 @@ else if($_SESSION['rang']==="Admin"){
             case "server":
                 $name = $_GET["name"] ?? "";
 
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
 
                 $action = $_GET["action"] ?? "";
@@ -214,7 +214,7 @@ else if($_SESSION['rang']==="Admin"){
                     $port = (int)$row['Port'];
                     $rang = $row['Roll'];
                 }
-                require("assets/api/serverstatus/Serverstatus.php");
+                require("assets/lib/serverstatus/Serverstatus.php");
                 if($host=="localhost"||$host=="127.0.0.1"){
 
                     $template->assign("local", true);
@@ -267,7 +267,7 @@ else if($_SESSION['rang']==="Admin"){
                 $template->assign("allservers",$language["Admin"]["Index"]["allservers"]);
                 $template->assign("shownow",$language["Admin"]["Index"]["shownow"]);
 
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
                 $db_res = $mysql->count( "SELECT `Name` FROM `login` ");
                 $template->assign("usernumber",$db_res);
@@ -302,7 +302,7 @@ else{
             $template->assign("allserver",$language["User"]["Server"]["allserver"]);
             $template->assign("newserver",$language["User"]["Server"]["newserver"]);
             $template->assign("noserver",$language["User"]["Server"]["noserver"]);
-            require("assets/api/mysql/mysql_connetion.php");
+            require("assets/lib/mysql/mysql_connetion.php");
             $mysql = new mysql_connetion();
             if($mysql->count("SELECT * FROM `servers` ")<1){
                 $template->assign("serverloopstatus",false);
@@ -325,7 +325,7 @@ else{
             case "server":
             $name = $_GET["name"] ?? "";
 
-            require("assets/api/mysql/mysql_connetion.php");
+            require("assets/lib/mysql/mysql_connetion.php");
             $mysql = new mysql_connetion();
             $db_res = $mysql->result("SELECT * FROM `servers` WHERE `Server`='".$name."'");
 
@@ -338,7 +338,7 @@ else{
                 $port = (int)$row['Port'];
                 $rang = $row['Roll'];
             }
-            require("assets/api/serverstatus/Serverstatus.php");
+            require("assets/lib/serverstatus/Serverstatus.php");
             if($host=="localhost"||$host=="127.0.0.1"){
 
                 $template->assign("local", true);
@@ -372,7 +372,7 @@ else{
             break;
 
             default:
-                require("assets/api/serverstatus/Serverstatus.php");
+                require("assets/lib/serverstatus/Serverstatus.php");
 
                 $template->assign("Name",$_SESSION['name']);
                 $template->assign("htmllang",$language["html"]);
@@ -387,7 +387,7 @@ else{
                 $template->assign("lastserver",$offset-1);
 
 
-                require("assets/api/mysql/mysql_connetion.php");
+                require("assets/lib/mysql/mysql_connetion.php");
                 $mysql = new mysql_connetion();
 
                 $servercount=$mysql->count( "SELECT * FROM `servers` WHERE `Roll`='default' ");

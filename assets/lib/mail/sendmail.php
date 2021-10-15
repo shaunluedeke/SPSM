@@ -1,10 +1,11 @@
 <?php
 
-require(__DIR__ . "/../config/mail_config.php");
+
 class sendmail
 {
 
-public function send($email,$subject,$txt){
+public static function send($email,$subject,$txt){
+    require(__DIR__ . "/../config/mail_config.php");
     $to = "";
     if(is_array($email)) {
         for($i=0, $iMax = count($email); $i < $iMax; $i++){
