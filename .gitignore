@@ -1,3 +1,4 @@
 assets/php/configs.php
 assets/api/config/db_config.php
 .idea/
+*.xml
